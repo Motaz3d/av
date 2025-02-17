@@ -29,7 +29,7 @@ p {
 	font-size: 1.4rem;
 	margin-top: 5px;
 	line-height: 2.5rem;
-	font-weight: 300;
+	font-weight: 200;
 	letter-spacing: 0.05rem;
 }
 .section-title {
@@ -42,24 +42,23 @@ p {
 	text-align: center;
 }
 
-
-.cta {
-	display: inline-block;
-	padding: 10px 30px;
-	color: white;
-	background-color: transparent;
-	border: 2px solid crimson;
+.section-title2 {
 	font-size: 2rem;
+	font-weight: 100;
+	color: rgb(49, 41, 119);
+	margin-bottom: 10px;
 	text-transform: uppercase;
 	letter-spacing: 0.1rem;
-	margin-top: 30px;
-	transition: 0.3s ease;
-	transition-property: background-color, color;
+	text-align: center;
 }
-.cta:hover {
-	color: white;
-	background-color: crimson;
+.se3 {
+	display: flex;
+	justify-content: center; 
+	align-items: center;     
+	height: 10vh;
+	text-align: center; 
 }
+
 .brand h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
@@ -84,7 +83,7 @@ p {
 }
 #header .header {
 	min-height: 8vh;
-	background-color: rgba(31, 30, 30, 0.24);
+	background-color: rgba(240, 248, 255, 0.021);
 	transition: 0.3s ease background-color;
 }
 #header .nav-bar {
@@ -215,15 +214,15 @@ p {
     text-align: center;
 }
 .btn-fr {
-    background-color: #3498db; /* Blue */
+    background-color: #071721; /* Blue */
 }
 
 .btn-en {
-    background-color:  #e74c3c; /* Green */
+    background-color:  #752820; /* Green */
 }
 
 .btn-ar {
-    background-color: #2ecc71; /* Red */
+    background-color: #439766; /* Red */
 }
 
 .btn:hover {
@@ -342,9 +341,9 @@ p {
 }
 
 .bold-center {
-    font-weight: bold; /* يجعل النص غامق */
-    text-align: left; /* يجعل النص في المنتصف */
-    font-size: 1.6rem; /* ضبط حجم الخط */
+    font-weight: bold; 
+    text-align: left; 
+    font-size: 1.6rem; 
 	color: white;
 	line-height: 2.2rem;
 	margin-bottom: 2px;
@@ -352,7 +351,7 @@ p {
 }
 
 .normal-left {
-    font-weight: normal; /* يجعل النص عادي */
+    font-weight: normal; 
     text-align: left; /* محاذاة النص لليسار */
     font-size: 1.6rem; /* نفس حجم الخط لضمان التناسق */
     margin-left: 20px; /* إضافة مسافة من اليسار */
@@ -537,7 +536,7 @@ p {
 #footer .footer {
 	min-height: 200px;
 	flex-direction: column;
-	padding-top: 50px;
+	padding-top: 0.5px;
 	padding-bottom: 10px;
 }
 #footer h2 {
@@ -545,21 +544,22 @@ p {
 	font-weight: 500;
 	font-size: 1.8rem;
 	letter-spacing: 0.1rem;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 0.5px;
+	margin-bottom: 0.1px;
 }
 #footer .social-icon {
 	display: flex;
-	margin-bottom: 30px;
+	margin-bottom: 0.1px;
 }
 #footer .social-item {
 	height: 50px;
 	width: 50px;
-	margin: 0 5px;
+	margin: 0.2px;
 }
 #footer .social-item img {
 	filter: grayscale(1);
 	transition: 0.3s ease filter;
+	margin: .3 px;
 }
 #footer .social-item:hover img {
 	filter: grayscale(0);
@@ -610,10 +610,12 @@ p {
 		font-size: 2.5rem;
 		padding: 20px 60px;
 	}
-	h1.section-title {
+	h1.section-title2 {
 		font-size: 6rem;
 	}
-
+	h1.section-title2 {
+		font-size: 6rem;
+	}
 	/* Hero */
 	#hero h1 {
 		font-size: 7rem;
