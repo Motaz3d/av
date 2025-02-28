@@ -744,3 +744,44 @@ p {
 
 /* inline-block
 /* Test */
+
+
+/* registration */
+.registration-container {
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 20px;
+	background: #f9f9f9;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-step {
+	display: none;
+  }
+  
+  .form-step.active {
+	display: block;
+  }
+  
+  input, select {
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+  
+  button {
+	background-color: #071721;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+  }
+  
+  button:hover {
+	background-color: #439766;
+  }
+
+  /* the registration */
