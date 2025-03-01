@@ -1,16 +1,15 @@
-// models/registration.js
 const mongoose = require('mongoose');
 
 const RegistrationSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
-    match: /^[A-Za-z]+$/  // التأكد من استخدام الأحرف اللاتينية فقط
+    match: /^[A-Za-z\s]+$/  // السماح بالأحرف اللاتينية مع المسافات
   },
   lastName: {
     type: String,
     required: true,
-    match: /^[A-Za-z]+$/
+    match: /^[A-Za-z\s]+$/
   },
   postalCode: {
     type: String,
@@ -30,17 +29,12 @@ const RegistrationSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    match: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
   },
   course: {
     type: String,
     required: true
-  },
-  semester: {
-    type: Number,
-    required: true,
-    min: 1,
-    max: 4
   },
   registeredAt: {
     type: Date,

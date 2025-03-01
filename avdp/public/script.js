@@ -1,51 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const steps = document.querySelectorAll(".form-step");
-  let currentStep = 0;
-
-  document.getElementById("next1").addEventListener("click", function () {
-      steps[currentStep].classList.remove("active");
+    let currentStep = 1;
+    const totalSteps = 3;
+    const progressBar = document.getElementById("progress-bar");
+  
+    function updateProgress() {
+      const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+      progressBar.style.width = `${progress}%`;
+    }
+  
+    document.getElementById("next1").addEventListener("click", function () {
+      document.getElementById("step-1").classList.remove("active");
+      document.getElementById("step-2").classList.add("active");
       currentStep++;
-      steps[currentStep].classList.add("active");
-  });
-
-  document.getElementById("next2").addEventListener("click", function () {
-      steps[currentStep].classList.remove("active");
+      updateProgress();
+    });
+  
+    document.getElementById("next2").addEventListener("click", function () {
+      document.getElementById("step-2").classList.remove("active");
+      document.getElementById("step-3").classList.add("active");
       currentStep++;
-      steps[currentStep].classList.add("active");
-      showPreview();
-  });
-
-  document.getElementById("prev2").addEventListener("click", function () {
-      steps[currentStep].classList.remove("active");
+      updateProgress();
+    });
+  
+    document.getElementById("prev2").addEventListener("click", function () {
+      document.getElementById("step-2").classList.remove("active");
+      document.getElementById("step-1").classList.add("active");
       currentStep--;
-      steps[currentStep].classList.add("active");
-  });
-
-  document.getElementById("prev3").addEventListener("click", function () {
-      steps[currentStep].classList.remove("active");
+      updateProgress();
+    });
+  
+    document.getElementById("prev3").addEventListener("click", function () {
+      document.getElementById("step-3").classList.remove("active");
+      document.getElementById("step-2").classList.add("active");
       currentStep--;
-      steps[currentStep].classList.add("active");
+      updateProgress();
+    });
+  
+    updateProgress();
   });
-
-  function showPreview() {
-      const preview = document.getElementById("preview");
-      const firstName = document.getElementById("firstName").value;
-      const lastName = document.getElementById("lastName").value;
-      const course = document.getElementById("course").value;
-      const semester = document.getElementById("semester").value;
-      const postalCode = document.getElementById("postalCode").value;
-      const street = document.getElementById("street").value;
-      const phone = document.getElementById("phone").value;
-      const email = document.getElementById("email").value;
-
-      preview.innerHTML = `
-          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-          <p><strong>Course:</strong> ${course}</p>
-          <p><strong>Semester:</strong> ${semester}</p>
-          <p><strong>Postal Code:</strong> ${postalCode}</p>
-          <p><strong>Street:</strong> ${street}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Email:</strong> ${email}</p>
-      `;
-  }
-});

@@ -785,3 +785,104 @@ p {
   }
 
   /* the registration */
+  /* ✅ تحسين تصميم نموذج التسجيل */
+.registration-container {
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 20px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+  }
+  
+  h2, h3 {
+	color: #071721;
+  }
+  
+  label {
+	display: block;
+	margin: 10px 0 5px;
+	font-size: 1.2rem;
+  }
+  
+  input, select {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+  
+  button {
+	background-color: #071721;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	margin: 10px;
+	border-radius: 5px;
+  }
+  
+  button:hover {
+	background-color: #439766;
+  }
+  
+  /* ✅ تحسين مراحل التسجيل */
+  .form-step {
+	display: none;
+  }
+  
+  .form-step.active {
+	display: block;
+  }
+
+  /* registration end */
+
+  /* ✅ شريط التقدم */
+.progress-container {
+	width: 100%;
+	background: #ddd;
+	height: 10px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+	width: 0%;
+	height: 10px;
+	background: #071721;
+	border-radius: 5px;
+	transition: width 0.3s ease-in-out;
+  }
+  
+  /* ✅ تحسين أزرار الاختيار */
+  .radio-group {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+  }
+  
+  .radio-button {
+	display: flex;
+	align-items: center;
+	background: #f5f5f5;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .radio-button input {
+	margin-right: 10px;
+  }
+  
+  /* ✅ تحسين تجربة النموذج */
+  .registration-container {
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 20px;
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+  }
