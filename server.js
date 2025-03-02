@@ -27,10 +27,25 @@ pool.connect()
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+// ✅ إعداد الملفات الثابتة لتقديم index.html من مجلد public
+app.use(express.static(path.join(__dirname, 'public')));
+
+// ✅ إعادة توجيه أي مسار غير موجود إلى الصفحة الرئيسية
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
 // ✅ عرض صفحة التسجيل
 app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'registration.html'));
 });
+
+// ✅ إضافة مسار رئيسي للصفحة الرئيسية
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html')); // تأكد أن لديك index.html في المجلد الرئيسي
+});
+
 
 // ✅ نقطة النهاية لتسجيل الطلاب في قاعدة البيانات
 app.post('/register', async (req, res) => {
