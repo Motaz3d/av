@@ -76,16 +76,21 @@ p {
 	top: 0;
 	width: 100vw;
 	height: auto;
+	
 }
 .logo24 {
-	filter: contrast(1.5) brightness(1.2);
-	filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.859));
+    filter: contrast(1.6) brightness(1.5)
+            drop-shadow(0px 0px 25px rgba(255, 255, 255, 1))
+            drop-shadow(0px 0px 35px rgba(255, 255, 255, 0.8)); /* تأثير مزدوج للهالة */
+    border-radius: 50px; /* يجعل الحواف ناعمة */
+    padding: 12px; /* يضيف مسافة داخلية */
 }
 #header .header {
 	min-height: 8vh;
 	background-color: rgba(240, 248, 255, 0.021);
 	transition: 0.3s ease background-color;
 }
+
 #header .nav-bar {
 	display: flex;
 	align-items: center;
@@ -247,8 +252,8 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-color: black;
-	opacity: 0.7;
+	background-color: rgba(0, 0, 0, 0.407);
+	opacity: 0.4;
 	z-index: -1;
 }
 #hero .hero {
@@ -727,9 +732,15 @@ p {
 	#header .nav-list ul li {
 		display: inline-block;
 	}
-	#header .nav-list ul li a {
-		font-size: 1.8rem;
+	
+
+	.scrolled #header .header {
+		background-color: white !important;
+		transition: 0.3s ease-in-out;
 	}
+
+
+
 	#header .nav-list ul a:after {
 		display: none;
 	}
@@ -749,13 +760,28 @@ p {
 /* registration */
 .registration-container {
 	max-width: 600px;
-	margin: 50px auto;
-	padding: 20px;
-	background: #f9f9f9;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 120px auto 50px; /* جعل النموذج يبدأ أسفل الـ Header */
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
   
+  .registration-container h1 {
+    font-size: 3rem; /* تكبير العنوان */
+    font-weight: bold;
+    color: #29323c; /* اللون المطلوب */
+}
+
+.registration-container h2 {
+    font-size: 2rem;
+    color: #485563; /* اللون المطلوب */
+    margin-bottom: 15px;
+}
+
+
+
   .form-step {
 	display: none;
   }
@@ -764,6 +790,15 @@ p {
 	display: block;
   }
   
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5rem;
+    border: 1px solid #485563;
+    border-radius: 5px;
+}
+
+
   input, select {
 	width: 100%;
 	padding: 10px;
@@ -773,15 +808,18 @@ p {
   }
   
   button {
-	background-color: #071721;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	cursor: pointer;
+	background-color: #29323c;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    margin-top: 15px;
   }
   
   button:hover {
-	background-color: #439766;
+	background-color: #485563;
   }
 
   /* the registration */
@@ -801,9 +839,11 @@ p {
   }
   
   label {
-	display: block;
-	margin: 10px 0 5px;
-	font-size: 1.2rem;
+	font-size: 1.6rem;
+    font-weight: bold;
+    color: #29323c;
+    display: block;
+    margin-top: 10px;
   }
   
   input, select {
@@ -886,3 +926,53 @@ p {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	text-align: center;
   }
+
+  .th3 {
+    color: black; /* يجعل النص أسود */
+    font-size: 2rem; /* حجم الخط */
+    font-weight: bold; /* يجعل الخط أكثر سمكًا */
+    text-align: center; /* محاذاة النص في المنتصف */ 
+    padding: 15px; /* إضافة مسافة داخلية حول النص */
+    border-radius: 20px; /* جعل الخلفية ناعمة الأطراف */
+    display: inline-block; /* لجعل الخلفية متناسبة مع النص */
+}
+
+
+/* ✅ تحديث الهيدر ليكون مثل الفوتر */
+#header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%); /* نفس لون الفوتر */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* ✅ ضبط الشفافية عند التمرير */
+.scrolled #header {
+    background-image: linear-gradient(60deg, #1e2833 0%, #3a4653 100%);
+}
+
+/* ✅ تغيير لون عناصر القائمة */
+#header .nav-list ul li a {
+    font-size: 1.3rem; /* حجم الخط أصغر */
+    font-weight: 500; /* يجعل الخط واضحًا لكن غير ثقيل */
+    letter-spacing: 0.05rem; /* تقليل تباعد الأحرف */
+    padding: 8px 15px; /* تصغير التباعد الداخلي */
+}
+
+/* ✅ عند تمرير الفأرة على الروابط */
+#header .nav-list ul li a:hover {
+    border-radius: 50px;
+    padding: 12px 24px;
+}
+
+/* ✅ تحسين شريط التبديل للغات */
+#header .language-switcher .btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+}
+
+#header .language-switcher .btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}

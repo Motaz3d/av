@@ -7,12 +7,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
+  
+  
+  
+  
   <div class="registration-container">
     <h1>Course Registration</h1>
     <form id="registrationForm">
       <!-- Step 1: Select Course and Semester -->
       <div class="form-step active" id="step-1">
-        <h2>Select Course and Semester</h2>
+        <h2>Select Course</h2>
         <label for="course">Course:</label>
         <select name="course" id="course" required>
           <option value="">-- Select --</option>
@@ -20,14 +25,7 @@
           <option value="Luxembourgish A1">Luxembourgish A1</option>
           <option value="Arabic Calligraphy">Arabic Calligraphy</option>
         </select>
-        <label for="semester">Semester (1-4):</label>
-        <select name="semester" id="semester" required>
-          <option value="">-- Select --</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+        
         <button type="button" id="next1">Next</button>
       </div>
 
@@ -59,6 +57,33 @@
       </div>
     </form>
   </div>
+
+  <!-- ✅ إضافة الـ Footer من الصفحة الرئيسية -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1>Centre Avicenne Luxembourg</h1>
+      </div>
+      <h2>Educational Training Center</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="https://www.facebook.com/avicenne.lu"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/x.png" /></a>
+        </div>
+      </div>
+      <p>Copyright © 2025 Centre Avicenne Luxembourg. All rights reserved</p>
+    </div>
+  </section>
+  <!-- ✅ نهاية الـ Footer -->
+
+
+
+
   <script src="script.js"></script>
 </body>
 </html>
