@@ -532,6 +532,22 @@ p {
 	line-height: 2rem;
 	font-weight: 500;
 }
+
+
+/* تغيير لون الروابط داخل قسم الاتصال */
+.contact-info a {
+    color: #29323c; /* اللون الذي تريده */
+    text-decoration: none; /* إزالة التسطير */
+    font-weight: bold; /* جعله بارزًا إذا لزم الأمر */
+}
+
+/* تغيير اللون عند التمرير فوقه */
+.contact-info a:hover {
+    color: #485563; /* لون مختلف عند التمرير */
+}
+
+
+
 /*End contact Section */
 
 /* Footer */
