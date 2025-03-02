@@ -25,27 +25,17 @@ pool.connect()
 
 // ✅ Middleware
 app.use(bodyParser.json());
-app.use(express.static('public'));
-
-// ✅ إعداد الملفات الثابتة لتقديم index.html من مجلد public
-app.use(express.static(path.join(__dirname, 'public')));
-
-// ✅ إعادة توجيه أي مسار غير موجود إلى الصفحة الرئيسية
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
+app.use(express.static(path.join(__dirname, 'public'))); // تقديم الملفات الثابتة من مجلد public
 
 // ✅ عرض صفحة التسجيل
 app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'registration.html'));
+    res.sendFile(path.join(__dirname, 'public', 'registration.html')); // تأكد من أن الملف في public
 });
 
-// ✅ إضافة مسار رئيسي للصفحة الرئيسية
+// ✅ عرض الصفحة الرئيسية
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html')); // تأكد أن لديك index.html في المجلد الرئيسي
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
 
 // ✅ نقطة النهاية لتسجيل الطلاب في قاعدة البيانات
 app.post('/register', async (req, res) => {
@@ -65,6 +55,11 @@ app.post('/register', async (req, res) => {
         console.error('❌ خطأ في إدخال البيانات:', err);
         res.status(500).json({ error: '❌ خطأ في عملية التسجيل' });
     }
+});
+
+// ✅ إعادة توجيه أي مسار غير موجود إلى الصفحة الرئيسية
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // ✅ تشغيل الخادم
