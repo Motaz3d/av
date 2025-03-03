@@ -10,9 +10,7 @@ const PORT = process.env.PORT || 3000;
 // ✅ إعداد اتصال PostgreSQL باستخدام Render Database URL
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL, // نستخدم متغير البيئة لحماية البيانات الحساسة
-    ssl: {
-        rejectUnauthorized: false // مطلوبة لاتصال آمن على Render
-    }
+    ssl: { rejectUnauthorized: false } // مطلوبة لاتصال آمن على Render
 });
 
 // ✅ التحقق من الاتصال بقاعدة البيانات
@@ -27,14 +25,14 @@ pool.connect()
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public'))); // تقديم الملفات الثابتة من مجلد public
 
-// ✅ عرض صفحة التسجيل
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'registration.html')); // تأكد من أن الملف في public
-});
-
 // ✅ عرض الصفحة الرئيسية
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// ✅ عرض صفحة التسجيل
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'registration.html'));
 });
 
 // ✅ نقطة النهاية لتسجيل الطلاب في قاعدة البيانات
