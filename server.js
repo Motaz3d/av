@@ -5,7 +5,7 @@ const path = require('path');
 require('dotenv').config(); // لدعم استخدام المتغيرات البيئية
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000; // استخدم المنفذ من البيئة أو 10000 كافتراضي
 
 // ✅ إعداد اتصال PostgreSQL باستخدام Render Database URL
 const pool = new Pool({
