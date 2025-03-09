@@ -992,3 +992,77 @@ p {
 #header .language-switcher .btn:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
+
+
+/* تصميم العناوين بالفرنسية كبيرة ثم العربية والإنجليزية أصغر */
+h1.section-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #071721;
+    text-align: center;
+}
+
+h2.section-title2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #485563;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* تنسيق النصوص */
+.description {
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 2.5rem;
+    margin: 20px;
+}
+
+/* تصميم زر التسجيل */
+.register-btn {
+    padding: 15px 30px;
+    font-size: 1.8rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+    background-color: #218838;
+}
+
+
+/* ✅ تنسيق الـ iFrame ليكون متجاوبًا */
+.registration-container iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    margin-top: 20px;
+}
+
+/* ✅ تحسين مظهر العناوين */
+.section-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #071721;
+}
+
+.section-title2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-align: center;
+    color: #485563;
+    margin-top: 10px;
+}
+
+/* ✅ تحسين وصف التسجيل */
+.description {
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 2.5rem;
+    margin-bottom: 20px;
+}

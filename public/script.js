@@ -2,29 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const steps = document.querySelectorAll(".form-step");
     let currentStep = 0;
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const nextBtn = document.getElementById('next1'); // زر الانتقال للخطوة التالية
-        const courseSelect = document.getElementById('course'); // حقل اختيار الدورة
-        const step1 = document.getElementById('step-1'); // القسم الأول من النموذج
-        const step2 = document.getElementById('step-2'); // القسم الثاني من النموذج
-    
-
-
-    // ✅ زر "التالي" والتحقق من اختيار الدورة
     const nextBtn = document.getElementById('next1'); 
     const courseSelect = document.getElementById('course'); 
     const step1 = document.getElementById('step-1'); 
     const step2 = document.getElementById('step-2'); 
 
-    // ✅ التعرف على لغة الموقع
-    function getLanguage() {
-        const lang = document.documentElement.lang || "fr"; // افتراضي الفرنسية
-        return lang;
-    }
-
-
-
-
+    // ✅ زر "التالي" والتحقق من اختيار الدورة
     nextBtn.addEventListener('click', function () {
         if (courseSelect.value !== "") { 
             step1.classList.remove('active'); 
@@ -35,11 +18,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ✅ أزرار التنقل بين الخطوات
-    document.getElementById("next2").addEventListener("click", function () {
-        steps[currentStep].classList.remove("active");
-        currentStep++;
-        steps[currentStep].classList.add("active");
-        showPreview();
+    document.getElementById("nextBtn").addEventListener("click", function() {
+        fetch("/api/next", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ step: "next" })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Response:", data);
+            alert(data.message || "⚠ البيانات غير متاحة!");
+        })
+        .catch(error => {
+            console.error("❌ خطأ في الاتصال:", error);
+        });
     });
 
     document.getElementById("prev2").addEventListener("click", function () {
@@ -104,26 +98,4 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error("❌ خطأ في إرسال البيانات:", error));
     }
-});
-
-
-nextBtn.addEventListener('click', function () {
-    if (courseSelect.value !== "") { // التأكد أن المستخدم اختار دورة
-        step1.classList.remove('active'); // إخفاء الخطوة 1
-        step2.classList.add('active'); // إظهار الخطوة 2
-    } else {
-        const lang = getLanguage();
-        let message = "";
-        
-        if (lang === "fr") {
-            message = "❌ Veuillez sélectionner un cours avant de continuer! 🇫🇷";
-        } else if (lang === "en") {
-            message = "❌ Please select a course before proceeding! 🇬🇧";
-        } else {
-            message = "❌ الرجاء اختيار دورة قبل المتابعة! 🇴🇦"; // علم جامعة الدول العربية أو رمز الضاد
-        }
-
-        alert(message);
-    }
-});
 });

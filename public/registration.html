@@ -7,56 +7,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  
-  
-  
-  
-  <div class="registration-container">
+    <div class="registration-container">
     <h1>Course Registration</h1>
     <form id="registrationForm">
       <!-- Step 1: Select Course and Semester -->
-      <div class="form-step active" id="step-1">
-        <h2>Select Course</h2>
-        <label for="course">Course:</label>
-        <select name="course" id="course" required>
-          <option value="">-- Select --</option>
-          <option value="French A1">French A1</option>
-          <option value="Luxembourgish A1">Luxembourgish A1</option>
-          <option value="Arabic Calligraphy">Arabic Calligraphy</option>
-        </select>
-        
-        <button type="button" id="next1">Next</button>
-      </div>
+      
+      <div class="registration-container">
+        <h1 class="section-title">Inscription au cours</h1>
+        <h2 class="section-title2">التسجيل في الدورة - Course Registration</h2>
+        <p class="description">
+            Veuillez remplir le formulaire ci-dessous pour vous inscrire.<br>
+            يرجى ملء النموذج أدناه للتسجيل.<br>
+            Please fill out the form below to register.
+        </p>
 
-      <!-- Step 2: Personal Information -->
-      <div class="form-step" id="step-2">
-        <h2>Personal Information</h2>
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" pattern="[A-Za-z]+" required>
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" pattern="[A-Za-z]+" required>
-        <label for="postalCode">Postal Code:</label>
-        <input type="text" id="postalCode" name="postalCode" required>
-        <label for="street">Street Name:</label>
-        <input type="text" id="street" name="street" required readonly>
-        <label for="phone">Phone:</label>
-        <input type="text" id="phone" name="phone" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <button type="button" id="prev2">Previous</button>
-        <button type="button" id="next2">Next</button>
-      </div>
+        <!-- ✅ Google Form intégré en iFrame -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScKk39ndZNcP5d..." width="100%" height="700px" frameborder="0" marginheight="0" marginwidth="0">
+            Loading…
+        </iframe>
+    </div>
 
-      <!-- Step 3: Review and Submit -->
-      <div class="form-step" id="step-3">
-        <h2>Review Your Information</h2>
-        <div id="preview"></div>
-        <button type="button" id="prev3">Previous</button>
-        <button type="submit" id="submitBtn">Submit</button>
-      </div>
-    </form>
-  </div>
 
   <!-- ✅ إضافة الـ Footer من الصفحة الرئيسية -->
   <section id="footer">
