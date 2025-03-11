@@ -33,9 +33,9 @@ p {
 	letter-spacing: 0.05rem;
 }
 .section-title {
-	font-size: 4rem;
-	font-weight: 300;
-	color: black;
+    font-size: 3.5rem;
+	font-weight: 300, bold;
+	color: #071721;
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
@@ -74,16 +74,19 @@ p {
 	z-index: 1000;
 	left: 0;
 	top: 0;
-	width: 100vw;
+    width: 100%;
 	height: auto;
-	
+	z-index: 1000;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	transition: background-color 0.3s ease-in-out;
 }
+
 .logo24 {
     filter: contrast(1.6) brightness(1.5)
             drop-shadow(0px 0px 25px rgba(255, 255, 255, 1))
             drop-shadow(0px 0px 35px rgba(255, 255, 255, 0.8)); /* تأثير مزدوج للهالة */
-    border-radius: 50px; /* يجعل الحواف ناعمة */
-    padding: 12px; /* يضيف مسافة داخلية */
+    border-radius: 50px;
+    padding: 12px;
 }
 #header .header {
 	min-height: 8vh;
@@ -413,6 +416,7 @@ p {
 	font-size: 1.8rem;
 	font-weight: 500;
 	margin-top: 10px;
+	color: rgb(250, 250, 250);
 }
 #projects .project-info p {
 	color: white;
@@ -776,15 +780,15 @@ p {
 /* registration */
 .registration-container {
 	max-width: 600px;
-    margin: 120px auto 50px; /* جعل النموذج يبدأ أسفل الـ Header */
-    padding: 20px;
+	margin: 50px auto;
+	padding: 20px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-  
-  .registration-container h1 {
+}
+
+.registration-container h1 {
     font-size: 3rem; /* تكبير العنوان */
     font-weight: bold;
     color: #29323c; /* اللون المطلوب */
@@ -798,15 +802,14 @@ p {
 
 
 
-  .form-step {
+.form-step {
 	display: none;
-  }
-  
-  .form-step.active {
+}
+.form-step.active {
 	display: block;
-  }
-  
-  select {
+}
+
+select {
     width: 100%;
     padding: 10px;
     font-size: 1.5rem;
@@ -815,16 +818,16 @@ p {
 }
 
 
-  input, select {
+input, select {
 	width: 100%;
 	padding: 10px;
-	margin: 5px 0;
+	margin-bottom: 15px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-  }
-  
-  button {
-	background-color: #29323c;
+}
+
+button {
+	background-color: #071721;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -832,23 +835,16 @@ p {
     font-size: 1.6rem;
     border-radius: 5px;
     margin-top: 15px;
-  }
-  
-  button:hover {
+	margin: 10px;
+	border-radius: 5px;
+}
+
+button:hover {
 	background-color: #485563;
   }
 
   /* the registration */
-  /* ✅ تحسين تصميم نموذج التسجيل */
-.registration-container {
-	max-width: 600px;
-	margin: 50px auto;
-	padding: 20px;
-	background: white;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	text-align: center;
-  }
+
   
   h2, h3 {
 	color: #071721;
@@ -862,36 +858,17 @@ p {
     margin-top: 10px;
   }
   
-  input, select {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 15px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-  }
+
   
-  button {
-	background-color: #071721;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	cursor: pointer;
-	margin: 10px;
-	border-radius: 5px;
-  }
+ 
   
   button:hover {
 	background-color: #439766;
   }
   
   /* ✅ تحسين مراحل التسجيل */
-  .form-step {
-	display: none;
-  }
+
   
-  .form-step.active {
-	display: block;
-  }
 
   /* registration end */
 
@@ -932,19 +909,10 @@ p {
 	margin-right: 10px;
   }
   
-  /* ✅ تحسين تجربة النموذج */
-  .registration-container {
-	max-width: 600px;
-	margin: 50px auto;
-	padding: 20px;
-	background: white;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	text-align: center;
-  }
+
 
   .th3 {
-    color: black; /* يجعل النص أسود */
+    color: black;
     font-size: 2rem; /* حجم الخط */
     font-weight: bold; /* يجعل الخط أكثر سمكًا */
     text-align: center; /* محاذاة النص في المنتصف */ 
@@ -955,14 +923,7 @@ p {
 
 
 /* ✅ تحديث الهيدر ليكون مثل الفوتر */
-#header {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    top: 0;
-    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%); /* نفس لون الفوتر */
-    transition: background-color 0.3s ease-in-out;
-}
+
 
 /* ✅ ضبط الشفافية عند التمرير */
 .scrolled #header {
@@ -1010,13 +971,14 @@ h2.section-title2 {
     margin-top: 10px;
 }
 
-/* تنسيق النصوص */
+
 .description {
     font-size: 1.8rem;
     text-align: center;
     line-height: 2.5rem;
-    margin: 20px;
+    margin-bottom: 20px;
 }
+
 
 /* تصميم زر التسجيل */
 .register-btn {
@@ -1043,13 +1005,7 @@ h2.section-title2 {
     margin-top: 20px;
 }
 
-/* ✅ تحسين مظهر العناوين */
-.section-title {
-    font-size: 3.5rem;
-    font-weight: bold;
-    text-align: center;
-    color: #071721;
-}
+
 
 .section-title2 {
     font-size: 2.2rem;
@@ -1059,10 +1015,3 @@ h2.section-title2 {
     margin-top: 10px;
 }
 
-/* ✅ تحسين وصف التسجيل */
-.description {
-    font-size: 1.8rem;
-    text-align: center;
-    line-height: 2.5rem;
-    margin-bottom: 20px;
-}
